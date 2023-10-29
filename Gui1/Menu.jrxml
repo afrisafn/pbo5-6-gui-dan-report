@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7a4f2e8f-c763-43be-a118-be8682c753e1">
+	<property name="ireport.zoom" value="1.6105100000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#FFB6C1">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#FFBFC9">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="New Dataset 1" uuid="80890700-f01f-43b4-9295-5781b77be2dc">
+		<queryString language="SQL">
+			<![CDATA[select*from menu_makanan]]>
+		</queryString>
+		<field name="kode_makanan" class="java.lang.Integer"/>
+		<field name="nama_makanan" class="java.lang.String"/>
+		<field name="harga" class="java.lang.Integer"/>
+	</subDataset>
+	<subDataset name="table" uuid="cb3ad87b-688b-490c-b0cf-edaaa3352afc">
+		<queryString language="SQL">
+			<![CDATA[select*from menu_makanan]]>
+		</queryString>
+		<field name="kode_makanan" class="java.lang.Integer"/>
+		<field name="nama_makanan" class="java.lang.String"/>
+		<field name="harga" class="java.lang.Integer"/>
+	</subDataset>
+	<queryString language="SQL">
+		<![CDATA[select*from menu_makanan]]>
+	</queryString>
+	<field name="kode_makanan" class="java.lang.Integer"/>
+	<field name="nama_makanan" class="java.lang.String"/>
+	<field name="harga" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="238" y="23" width="109" height="32" uuid="541a6780-76ed-4dee-972e-68134a98b25f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Menu Makanan ]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table" style="table" x="80" y="0" width="360" height="50" uuid="1c921763-379a-4a7f-aa80-62861db71593"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="table" uuid="43b047af-1753-4a0c-b9ae-a7ef6f54d2cc">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="33aee089-1505-4bf6-b328-2ff6c26a54f7">
+						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="ab132eb7-ab88-471f-87a7-0be70d7e009f"/>
+								<text><![CDATA[kode_makanan ]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="7b594149-8fa2-40ca-b71f-aa88430b305f"/>
+								<textFieldExpression><![CDATA[$F{kode_makanan}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="109" uuid="f2fee6d4-0594-46c6-8aa1-313b9fc0311c">
+						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="109" height="30" uuid="2dc7f7a2-fa50-4661-a9c8-153be8a89444"/>
+								<text><![CDATA[nama_makanan]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="c09e8b04-2233-459a-84f1-831c231a8454"/>
+								<textFieldExpression><![CDATA[$F{nama_makanan}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="180" uuid="3b7a2633-65e5-4dc5-84cf-47d990daf7f3">
+						<jr:tableHeader style="table_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="180" height="30" uuid="3849c1df-a81a-477e-9c01-3b8ff56e2efa"/>
+								<text><![CDATA[harga]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:detailCell style="table_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="65532294-7b10-47ae-86a0-ecd99c71b873"/>
+								<textFieldExpression><![CDATA[$F{harga}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="122" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
